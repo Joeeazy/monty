@@ -57,7 +57,8 @@ typedef struct my_memory
 monty_memory mem;
 
 
-
+/* function that free memory allocated*/
+void free_memory(stack_t **stack)
 /* Run or Execute monty program */
 void custom_execute(void);
 /*function that pushses an element to the stack*/
