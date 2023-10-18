@@ -50,10 +50,10 @@ void custom_execute(void)
 		if (arr[x].opcode == NULL)
 		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_store, mem.operation_name);
-			free_mem(&stackTop);
+			free_memory(&stackTop);
 			exit(EXIT_FAILURE);
 		}
 	}
 
-	free_mem(&stackTop);
+	free_memory(&stackTop);
 }
