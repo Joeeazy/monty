@@ -36,6 +36,28 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+  *struct my_memory - has the monty script
+  *current_line: used to free the allocated space by getline
+  *operation_name: finds the operations names e.g push pop
+  *operation_arg: operation arguments
+  *my_file: the file that has the lines being interpreted
+  *@stack_mode: if 0 thats a stack else it is a queue
+  */
+typedef struct my_memory
+{
+	char *current_line;
+	char *operation_name;
+	char *operation_arg;
+	FILE *input_file;
+	int stack_mode;
+}monty_memory;
+
+/* a global variable */
+monty_memory mem;
+
+
+
 /* Run or Execute monty program */
 void custom_execute(void);
 
