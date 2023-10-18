@@ -3,7 +3,7 @@
 /**
  * custom_execute - function that executes the whole program.
  */
-void custom_execute(void);
+void custom_execute(void)
 {
 	char *line_store = NULL;
 	size_t buffer_size = 0;
@@ -34,10 +34,10 @@ void custom_execute(void);
 	{
 		line_count++;
 		mem.current_line = line_store;
-		mem.operation_name = custom_strtok(line_store, " \n")
+		mem.operation_name = custom_strtok(line_store, " \n");
 			if (mem.operation_name == NULL || mem.operation_name[0] == '#')
 				continue;
-		mem.operation_arg = custon_strtok(NULL, " \n");
+		mem.operation_arg = custom_strtok(NULL, " \n");
 		for (x = 0; arr[x].opcode; x++)
 		{
 			if (custom_strcmp(arr[x].opcode, mem.operation_name) == 0)
@@ -49,7 +49,7 @@ void custom_execute(void);
 
 		if (arr[x].opcode == NULL)
 		{
-			printf(stderr, "L%u: unknown instruction %s\n", line_store, mem.operation_name);
+			fprintf(stderr, "L%u: unknown instruction %s\n", line_store, mem.operation_name);
 			free_mem(&stackTop);
 			exit(EXIT_FAILURE);
 		}
