@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 
 /**
   * func_pall - print the data in stack
@@ -22,17 +22,17 @@ void func_pall(stack_t **stack, unsigned int line_number)
  * @n: actual string to check
  * Return: (0) if not number (1) if is number
  */
-int check_num(char *i)
+int check_num(char *n)
 {
 	int j;
 
-	if (i == NULL)
+	if (n == NULL)
 		return (0);
-	for (j = 0; i[j]; j++)
+	for (j = 0; n[j]; j++)
 	{
-		if (j == 0 && (i[j] == '-' || i[j] == '+'))
+		if (j == 0 && (n[j] == '-' || n[j] == '+'))
 			continue;
-		if (i[j] < '0' || i[j] > '9')
+		if (n[j] < '0' || n[j] > '9')
 			return (0);
 	}
 	return (1);
@@ -60,7 +60,7 @@ void func_push(stack_t **stack, unsigned int line_number)
 		free_memory(stack);
 		exit(EXIT_FAILURE);
 	}
-	org_node->i = atoi(mem.op_arg);
+	org_node->n = atoi(mem.operation_arg);
 	if (mem.stack_mode == 0)
 	{
 		org_node->prev = NULL;
@@ -96,7 +96,7 @@ void func_pint(stack_t **stack, unsigned int line_number)
 		free_memory(stack);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d\n", (*stack)->i);
+	printf("%d\n", (*stack)->n);
 }
 /**
  * func_pop - deletes the top element of the stack.

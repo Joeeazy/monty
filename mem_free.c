@@ -14,6 +14,6 @@ void free_memory(stack_t **stack)
 		*stack = (*stack)->next;
 		free(temp);
 	}
-	free(mem.str);
-	fclose(mem.mem_file);
+	free(mem.current_line);
+	fclose(mem.input_file);
 }

@@ -1,4 +1,6 @@
-#include "monty.h"
+#include "main.h"
+#define  _POSIX_C_SOURCE 200809L
+#define  _GNU_SOURCE
 
 /**
  * custom_execute - function that executes the whole program.
@@ -14,11 +16,10 @@ void custom_execute(void)
 		{"pall", func_pall},
 		{"pint", func_pint},
 		{"pop", func_pop},
-		{"pop", func_pop},
 		{"swap", func_swap},
 		{"add", func_add},
 		{"nop", func_nop},
-		{"sub", fun_sub},
+	/*	{"sub", fun_sub},
 		{"div", fun_div},
 		{"mul", func_mul},
 		{"mod", func_mod},
@@ -28,19 +29,19 @@ void custom_execute(void)
 		{"rotl", func_rotl},
 		{"rotr", func_rotr},
 		{"stack", func_stack},
-		{"queue", func_queue},
+		{"queue", func_queue},*/
 	};
-	while (getline(line_store, &buffer_size, mem.input_file) != -1)
+	while (getline(&line_store, &buffer_size, mem.input_file) != -1)
 	{
 		line_count++;
 		mem.current_line = line_store;
-		mem.operation_name = custom_strtok(line_store, " \n");
+		mem.operation_name = strtok(line_store, " \n");
 			if (mem.operation_name == NULL || mem.operation_name[0] == '#')
 				continue;
-		mem.operation_arg = custom_strtok(NULL, " \n");
+		mem.operation_arg = strtok(NULL, " \n");
 		for (x = 0; arr[x].opcode; x++)
 		{
-			if (custom_strcmp(arr[x].opcode, mem.operation_name) == 0)
+			if (strcmp(arr[x].opcode, mem.operation_name) == 0)
 			{
 				arr[x].f(&stackTop, line_count);
 				break;
@@ -49,7 +50,7 @@ void custom_execute(void)
 
 		if (arr[x].opcode == NULL)
 		{
-			fprintf(stderr, "L%u: unknown instruction %s\n", line_store, mem.operation_name);
+			fprintf(stderr, "L%u: unknown instruction %s\n", line_count, mem.operation_name);
 			free_memory(&stackTop);
 			exit(EXIT_FAILURE);
 		}

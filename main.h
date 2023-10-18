@@ -4,6 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stddef.h>
+#define  _POSIX_C_SOURCE 200809L
+#define _GNU_SOURCE
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -58,7 +61,7 @@ monty_memory mem;
 
 
 /* function that free memory allocated*/
-void free_memory(stack_t **stack)
+void free_memory(stack_t **stack);
 /* Run or Execute monty program */
 void custom_execute(void);
 /*function that pushses an element to the stack*/
