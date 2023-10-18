@@ -60,6 +60,14 @@ monty_memory mem;
 
 /* Run or Execute monty program */
 void custom_execute(void);
-
-
+/*function that pushses an element to the stack*/
+void func_push(stack_t **stack, unsigned int line_number);
+/*function that removes an element to the stack*/
+void func_pop(stack_t **stack, unsigned int line_number);
+/*function that prints elements to the stack*/
+void func_pint(stack_t **stack, unsigned int line_number);
+/*function that prints values on the stack*/
+void func_pall(stack_t **stack, unsigned int line_number);
+/*function that swaps element to the stack*/
+void func_swap(stack_t **stack, unsigned int line_number);
 #endif
