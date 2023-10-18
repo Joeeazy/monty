@@ -30,4 +30,28 @@ void custom_execute(void);
 		{"stack", func_stack},
 		{"queue", func_queue},
 	}
-	while (getline(line_store, &buffer_size, mem.input_file
+	while (getline(line_store, &buffer_size, mem.input_file) != -1)
+	{
+		line_count++;
+		mem.current_line = line_store;
+		mem.operation_name = custom_strtok(line_store, " \n")
+			if (memory1.op_name == NULL || memory1.op_name[0] == '#')
+				continue;
+		mem.operation_arg = custon_strtok(NULL, " \n");
+		for (x = 0; arr[x].opcode; x++)
+		{
+			if (custom_strcmp(arr[x].opcode, mem.operation_name) == 0)
+			{
+				arr[x].f(&stackTop, line_count);
+				break;
+			}
+		}
+		if (arr[x].opcode == NULL)
+		{
+			printf(stderr, "L%u: unknown instruction %s\n", line_store, mem.operation_name);
+			free_mem(&stackTop);
+			exit(EXIT_FAILURE);
+		}
+	}
+	free_mem(&stackTop);
+}
