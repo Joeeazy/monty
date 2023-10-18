@@ -1,10 +1,8 @@
 #include "main.h"
 /**
   * free_memory - free allocated memory
-  * @stack: linked list
-  * free linked list
-  * free op_name: line by getline
-  * close file that has name m_file
+  * @stack: the linked list containing the elements
+  * free operation_name: memory allocated to getline()
   */
 void free_memory(stack_t **stack)
 {
