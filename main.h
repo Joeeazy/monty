@@ -70,4 +70,8 @@ void func_pint(stack_t **stack, unsigned int line_number);
 void func_pall(stack_t **stack, unsigned int line_number);
 /*function that swaps element to the stack*/
 void func_swap(stack_t **stack, unsigned int line_number);
+/*function that adds the first two elements*/
+void func_add(stack_t **stack, unsigned int line_number);
+/*functio opcode does not do anything*/
+void func_nop(stack_t **stack, unsigned int line_number);
 #endif
