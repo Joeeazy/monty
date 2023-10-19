@@ -19,7 +19,8 @@ instruction_t arr[] = {
 {"add", func_add}, {"nop", func_nop},
 {"sub", func_sub}, {"div", func_div},
 {"mul", func_mul}, {"mod", func_mod},
-{"pchar", func_pchar},
+{"pchar", func_pchar}, {"rotr", func_rotr},
+{"rotl", func_rotl},
 };
 while (getline(&line_store, &buffer_size, mem.input_file) != -1)
 {

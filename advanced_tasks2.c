@@ -37,6 +37,7 @@ void func_pstr(stack_t **stack, unsigned int line_number)
 			break;
 		printf("%c", temp->n);
 		temp = temp->next;
+	}
 		printf("\n");
 }
 

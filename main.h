@@ -111,5 +111,5 @@ void func_rotr(stack_t **stack, unsigned int line_number);
 void func_pstr(stack_t **stack, unsigned int line_number);
 
 /*rotates the stack to the top.*/
-void func_rot1(stack_t **stack, unsigned int line_number);
+void func_rotl(stack_t **stack, unsigned int line_number);
 #endif
