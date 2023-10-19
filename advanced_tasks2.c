@@ -5,10 +5,10 @@
  * @stack: the head of the stack
  * @line_number: the line number count
  */
-void func_rotr(stack_t **stack, unsigned int line_number)
+void func_rotr(stack_t **stack, unsigned int src_line)
 {
 	stack_t *copy;
-	(void) line_number;
+	(void) src_line;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return;
@@ -24,9 +24,9 @@ void func_rotr(stack_t **stack, unsigned int line_number)
 /**
   * func_pstr -  prints the string starting at the top of the stack
   * @stack: head position of the satck
-  * @line_number: the line number count
+  * @src_line: the line number count
   */
-void func_pstr(stack_t **stack, unsigned int line_number)
+void func_pstr(stack_t **stack, unsigned int src_line)
 {
 	stack_t *temp = *stack;
 	(void) line_number;
@@ -44,12 +44,12 @@ void func_pstr(stack_t **stack, unsigned int line_number)
 /**
   * func_rotl - top element goes last while the second element becomes first
   * @stack: head of the stack in the linked list
-  * @line_number: the line number count
+  * @src_line: the line number count
   */
-void func_rotl(stack_t **stack, unsigned int line_number)
+void func_rotl(stack_t **stack, unsigned int src_line)
 {
 	stack_t *tmp, *prev_head;
-	(void) line_number;
+	(void) src_line;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return;
