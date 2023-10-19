@@ -5,8 +5,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stddef.h>
-#define  _POSIX_C_SOURCE 200809L
-#define _GNU_SOURCE
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -78,4 +76,13 @@ void func_swap(stack_t **stack, unsigned int line_number);
 void func_add(stack_t **stack, unsigned int line_number);
 /*functio opcode does not do anything*/
 void func_nop(stack_t **stack, unsigned int line_number);
+/* function that subtracts the first two elements from a stack */
+void func_sub(stack_t **stack, unsigned int line_number);
+
+/* divides the second top element of the stack by the top element of the stack. */
+void func_div(stack_t **stack, unsigned int line_number);
+
+/* multiplies the second top element of the stack with the top element of the stack. */
+void func_mul(stack_t **stack, unsigned int line_number);
+
 #endif

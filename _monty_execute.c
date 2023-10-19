@@ -19,17 +19,17 @@ void custom_execute(void)
 		{"swap", func_swap},
 		{"add", func_add},
 		{"nop", func_nop},
-	/*	{"sub", fun_sub},
-		{"div", fun_div},
+		{"sub", func_sub},
+		{"div", func_div},
 		{"mul", func_mul},
-		{"mod", func_mod},
+/*		{"mod", func_mod},
 		{"monty", func_monty},
 		{"pchar", func_pchar},
 		{"pstr", func_pstr},
 		{"rotl", func_rotl},
 		{"rotr", func_rotr},
 		{"stack", func_stack},
-		{"queue", func_queue},*/
+		{"queue", func_queue}, */
 	};
 	while (getline(&line_store, &buffer_size, mem.input_file) != -1)
 	{
