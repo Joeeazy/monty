@@ -15,14 +15,10 @@ instruction_t arr[] = {
 {"push", func_push},
 {"pall", func_pall},
 {"pint", func_pint},
-{"pop", func_pop},
-{"swap", func_swap},
-{"add", func_add},
-{"nop", func_nop},
-{"sub", func_sub},
-{"div", func_div},
-{"mul", func_mul},
-{"mod", func_mod},
+{"pop", func_pop}, {"swap", func_swap},
+{"add", func_add}, {"nop", func_nop},
+{"sub", func_sub}, {"div", func_div},
+{"mul", func_mul}, {"mod", func_mod},
 {"pchar", func_pchar},
 };
 while (getline(&line_store, &buffer_size, mem.input_file) != -1)
@@ -41,14 +37,13 @@ arr[x].f(&stackTop, line_count);
 break;
 }
 }
-
 if (arr[x].opcode == NULL)
 {
-fprintf(stderr, "L%u: unknown instruction %s\n", line_count, mem.operation_name);
+fprintf(stderr, "L%u: unknown instruction %s\n", line_count, mem.operation_name
+		);
 free_memory(&stackTop);
 exit(EXIT_FAILURE);
 }
 }
-
 free_memory(&stackTop);
 }

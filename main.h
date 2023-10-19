@@ -39,10 +39,10 @@ typedef struct instruction_s
 
 /**
   *struct my_memory - has the monty script
-  *current_line: used to free the allocated space by getline
-  *operation_name: finds the operations names e.g push pop
-  *operation_arg: operation arguments
-  *my_file: the file that has the lines being interpreted
+  *@current_line: used to free the allocated space by getline
+  *@operation_name: finds the operations names e.g push pop
+  *@operation_arg: operation arguments
+  *@input_file: the file that has the lines being interpreted
   *@stack_mode: if 0 thats a stack else it is a queue
   */
 typedef struct my_memory
@@ -65,35 +65,51 @@ void openMontyFile(char *fileName);
 
 /* function that free memory allocated*/
 void free_memory(stack_t **stack);
+
 /* Run or Execute monty program */
 void custom_execute(void);
+
 /*function that pushses an element to the stack*/
 void func_push(stack_t **stack, unsigned int line_number);
+
 /*function that removes an element to the stack*/
 void func_pop(stack_t **stack, unsigned int line_number);
+
 /*function that prints elements to the stack*/
 void func_pint(stack_t **stack, unsigned int line_number);
+
 /*function that prints values on the stack*/
 void func_pall(stack_t **stack, unsigned int line_number);
+
 /*function that swaps element to the stack*/
 void func_swap(stack_t **stack, unsigned int line_number);
+
 /*function that adds the first two elements*/
 void func_add(stack_t **stack, unsigned int line_number);
+
 /*functio opcode does not do anything*/
 void func_nop(stack_t **stack, unsigned int line_number);
+
 /* function that subtracts the first two elements from a stack */
 void func_sub(stack_t **stack, unsigned int line_number);
 
-/* divides the second top element of the stack by the top element of the stack. */
+/* div the second top element of the stack by the top element of the stack. */
 void func_div(stack_t **stack, unsigned int line_number);
 
-/* multiplies the second top element of the stack with the top element of the stack. */
+/* mult the 2nd top element of the stack with the top element of the stack. */
 void func_mul(stack_t **stack, unsigned int line_number);
 
-/* computes the rest of the division of the second top element of the stack by the top element of the stack. */
+/* div of the 2nd top element of the stack by the top element of the stack.*/
 void func_mod(stack_t **stack, unsigned int line_number);
 
 /*  prints the char at the top of the stack, followed by a new line.  */
 void func_pchar(stack_t **stack, unsigned int line_number);
+/*  rotates the stack to the bottom.*/
+void func_rotr(stack_t **stack, unsigned int line_number);
 
+/*prints the string starting at the top of the stack,followed by a new line.*/
+void func_pstr(stack_t **stack, unsigned int line_number);
+
+/*rotates the stack to the top.*/
+void func_rot1(stack_t **stack, unsigned int line_number);
 #endif
