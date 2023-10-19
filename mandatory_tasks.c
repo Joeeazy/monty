@@ -3,12 +3,12 @@
 /**
 * func_pall - print the data in stack
 * @stack: stack
-* @line_number: the line number of interpreted opened file
+* @src_line: the line number of interpreted opened file
 */
-void func_pall(stack_t **stack, unsigned int line_number)
+void func_pall(stack_t **stack, unsigned int src_line)
 {
 stack_t *temp = *stack;
-(void) line_number;
+(void) src_line;
 
 while (temp)
 {
@@ -40,16 +40,16 @@ return (1);
 /**
 * func_push - push new node to the top of the stack
 * @stack: stack top
-* @line_number: the actual line number in opened file to interpret
+* @src_line: the actual line number in opened file to interpret
 */
-void func_push(stack_t **stack, unsigned int line_number)
+void func_push(stack_t **stack, unsigned int src_line)
 {
 stack_t *org_node;
 stack_t *temp_node;
 
 if (check_num(mem.operation_arg) == 0)
 {
-fprintf(stderr, "L%u: usage: push integer\n", line_number);
+fprintf(stderr, "L%u: usage: push integer\n", src_line);
 free_memory(stack);
 exit(EXIT_FAILURE);
 }
@@ -86,13 +86,13 @@ else
 /**
 * func_pint - opcodeprints the value top of the stack,followed by a new line
 * @stack: stack
-* @line_number: line number at opened interpreted file
+* @src_line: line number at opened interpreted file
 */
-void func_pint(stack_t **stack, unsigned int line_number)
+void func_pint(stack_t **stack, unsigned int src_line)
 {
 if (*stack == NULL)
 {
-fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+fprintf(stderr, "L%u: can't pint, stack empty\n", src_line);
 free_memory(stack);
 exit(EXIT_FAILURE);
 }
@@ -101,15 +101,15 @@ printf("%d\n", (*stack)->n);
 /**
 * func_pop - deletes the top element of the stack.
 * @stack: stack
-* @line_number: The line number at opened interpreted file
+* @src_line: The line number at opened interpreted file
 */
-void func_pop(stack_t **stack, unsigned int line_number)
+void func_pop(stack_t **stack, unsigned int src_line)
 {
 stack_t *temp;
 
 if (*stack == NULL)
 {
-fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
+fprintf(stderr, "L%u: can't pop an empty stack\n", src_line);
 free_memory(stack);
 exit(EXIT_FAILURE);
 }

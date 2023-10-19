@@ -3,15 +3,15 @@
 /**
 * func_swap - fuction that swaps the top two elements of the stack.
 * @stack: the stack with the elements
-* @line_number: the line number to be interpreted in file
+* @src_line: the line number to be interpreted in file
 */
-void func_swap(stack_t **stack, unsigned int line_number)
+void func_swap(stack_t **stack, unsigned int src_line)
 {
 int temp;
 
 if (*stack == NULL || (*stack)->next == NULL)
 {
-fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+fprintf(stderr, "L%u: can't swap, stack too short\n", src_line);
 free_memory(stack);
 exit(EXIT_FAILURE);
 }
@@ -22,13 +22,13 @@ temp = (*stack)->n;
 /**
 * func_add -  adds the top two elements of the stack.
 * @stack: stack containing the elements
-* @line_number: the line number of the interpreted file
+* @src_line: the line number of the interpreted file
 */
-void func_add(stack_t **stack, unsigned int line_number)
+void func_add(stack_t **stack, unsigned int src_line)
 {
 if (*stack == NULL || (*stack)->next == NULL)
 {
-fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+fprintf(stderr, "L%u: can't add, stack too short\n", src_line);
 free_memory(stack);
 exit(EXIT_FAILURE);
 }
@@ -40,10 +40,10 @@ free((*stack)->prev);
 /**
 * func_nop - opcode function does not do anything
 * @stack: stack to be implemented
-* @line_number: line number of the interpreted file
+* @src_line: line number of the interpreted file
 */
-void func_nop(stack_t **stack, unsigned int line_number)
+void func_nop(stack_t **stack, unsigned int src_line)
 {
 (void) stack;
-(void) line_number;
+(void) src_line;
 }
