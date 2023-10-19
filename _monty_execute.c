@@ -24,13 +24,6 @@ instruction_t arr[] = {
 {"mul", func_mul},
 {"mod", func_mod},
 {"pchar", func_pchar},
-/**
- * {"pstr", func_pstr},
- * {"rotl", func_rotl},
- * {"rotr", func_rotr},
- * {"stack", func_stack},
- * {"queue", func_queue},
- */
 };
 while (getline(&line_store, &buffer_size, mem.input_file) != -1)
 {

@@ -34,7 +34,7 @@ else if ((*stack)->n == 0)
 error_message = "Division by zero";
 if (error_message)
 {
-fprintf((2, "L%d: can't sub, stack too short\n", line_number);
+fprintf(stderr, "L%u: %s\n", line_number, error_message);
 free_memory(stack);
 exit(EXIT_FAILURE);
 }
@@ -53,7 +53,7 @@ void func_mul(stack_t **stack, unsigned int line_number)
 {
 if (*stack == NULL || (*stack)->next == NULL)
 {
-fprintf(stderr, "L%u: %s\n", line_number, error_message);
+fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
 free_memory(stack);
 exit(EXIT_FAILURE);
 }
