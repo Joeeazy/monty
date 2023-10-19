@@ -63,3 +63,25 @@ void func_rotl(stack_t **stack, unsigned int src_line)
 	prev_head->prev = tmp;
 	prev_head->next = NULL;
 }
+
+/**
+ * m_stack - Set stack mode in Monty.
+ * @stack: Double pointer to the stack.
+ * @src_line: Source line number.
+ */
+void m_stack(stack_t **stack, unsigned int src_line)
+{
+	(*stack)->n = STACK;
+	(void)src_line;
+}
+
+/**
+ * m_queue - Set queue mode in Monty.
+ * @stack: Double pointer to the stack.
+ * @src_line: Source line number.
+ */
+void m_queue(stack_t **stack, unsigned int src_line)
+{
+	(*stack)->n = QUEUE;
+	(void)src_line;
+}

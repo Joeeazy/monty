@@ -10,6 +10,9 @@
 #include <ctype.h>
 #include <fcntl.h>
 
+#define STACK 0
+#define QUEUE 1
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -117,4 +120,9 @@ void func_pstr(stack_t **stack, unsigned int src_line);
 
 /*rotates the stack to the top.*/
 void func_rotl(stack_t **stack, unsigned int src_line);
+
+/* Implement the stack and queue opcodes. */
+void m_stack(stack_t **stack, unsigned int src_line);
+void m_queue(stack_t **stack, unsigned int src_line);
+
 #endif
