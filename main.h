@@ -70,46 +70,47 @@ void free_memory(stack_t **stack);
 void custom_execute(void);
 
 /*function that pushses an element to the stack*/
-void func_push(stack_t **stack, unsigned int line_number);
+void func_push(stack_t **stack, unsigned int src_line);
 
 /*function that removes an element to the stack*/
-void func_pop(stack_t **stack, unsigned int line_number);
+void func_pop(stack_t **stack, unsigned int src_line);
 
 /*function that prints elements to the stack*/
-void func_pint(stack_t **stack, unsigned int line_number);
+void func_pint(stack_t **stack, unsigned int src_line);
 
 /*function that prints values on the stack*/
-void func_pall(stack_t **stack, unsigned int line_number);
+void func_pall(stack_t **stack, unsigned int src_line);
 
 /*function that swaps element to the stack*/
-void func_swap(stack_t **stack, unsigned int line_number);
+void func_swap(stack_t **stack, unsigned int src_line);
 
 /*function that adds the first two elements*/
-void func_add(stack_t **stack, unsigned int line_number);
+void func_add(stack_t **stack, unsigned int src_line);
 
 /*functio opcode does not do anything*/
-void func_nop(stack_t **stack, unsigned int line_number);
+void func_nop(stack_t **stack, unsigned int src_line);
 
 /* function that subtracts the first two elements from a stack */
-void func_sub(stack_t **stack, unsigned int line_number);
+void func_sub(stack_t **stack, unsigned int src_line);
 
 /* div the second top element of the stack by the top element of the stack. */
-void func_div(stack_t **stack, unsigned int line_number);
+void func_div(stack_t **stack, unsigned int src_line);
 
 /* mult the 2nd top element of the stack with the top element of the stack. */
-void func_mul(stack_t **stack, unsigned int line_number);
+void func_mul(stack_t **stack, unsigned int src_line);
 
 /* div of the 2nd top element of the stack by the top element of the stack.*/
-void func_mod(stack_t **stack, unsigned int line_number);
+void func_mod(stack_t **stack, unsigned int src_line);
 
 /*  prints the char at the top of the stack, followed by a new line.  */
-void func_pchar(stack_t **stack, unsigned int line_number);
+void func_pchar(stack_t **stack, unsigned int src_line);
+
 /*  rotates the stack to the bottom.*/
-void func_rotr(stack_t **stack, unsigned int line_number);
+void func_rotr(stack_t **stack, unsigned int src_line);
 
 /*prints the string starting at the top of the stack,followed by a new line.*/
-void func_pstr(stack_t **stack, unsigned int line_number);
+void func_pstr(stack_t **stack, unsigned int src_line);
 
 /*rotates the stack to the top.*/
-void func_rotl(stack_t **stack, unsigned int line_number);
+void func_rotl(stack_t **stack, unsigned int src_line);
 #endif
