@@ -3,7 +3,7 @@
 /**
  * func_rotr - function that rotates element to the bottom
  * @stack: the head of the stack
- * @line_number: the line number count
+ * @src_line: the line number count
  */
 void func_rotr(stack_t **stack, unsigned int src_line)
 {
@@ -29,7 +29,7 @@ void func_rotr(stack_t **stack, unsigned int src_line)
 void func_pstr(stack_t **stack, unsigned int src_line)
 {
 	stack_t *temp = *stack;
-	(void) line_number;
+	(void) src_line;
 
 	while (temp)
 	{

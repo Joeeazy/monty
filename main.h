@@ -33,8 +33,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int src_line);
 } instruction_t;
 
 /**
@@ -52,7 +52,7 @@ typedef struct my_memory
 	char *operation_arg;
 	FILE *input_file;
 	int stack_mode;
-}monty_memory;
+} monty_memory;
 
 /* a global variable */
 monty_memory mem;
