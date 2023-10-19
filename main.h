@@ -57,6 +57,11 @@ typedef struct my_memory
 /* a global variable */
 monty_memory mem;
 
+/* counts number of arguments */
+void checkArgumentCount(int argc);
+
+/* function to open a monty bytecodes files */
+void openMontyFile(char *fileName);
 
 /* function that free memory allocated*/
 void free_memory(stack_t **stack);
@@ -84,5 +89,11 @@ void func_div(stack_t **stack, unsigned int line_number);
 
 /* multiplies the second top element of the stack with the top element of the stack. */
 void func_mul(stack_t **stack, unsigned int line_number);
+
+/* computes the rest of the division of the second top element of the stack by the top element of the stack. */
+void func_mod(stack_t **stack, unsigned int line_number);
+
+/*  prints the char at the top of the stack, followed by a new line.  */
+void func_pchar(stack_t **stack, unsigned int line_number);
 
 #endif

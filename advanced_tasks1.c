@@ -71,23 +71,45 @@ void func_mul(stack_t **stack, unsigned int line_number)
  */
 void func_mod(stack_t **stack, unsigned int line_number)
 {
-    char *error_message = NULL;
-
-    if (*stack == NULL || (*stack)->next == NULL)
-        error_message = "can't mod, stack too short";
-    else if ((*stack)->n == 0)
-        error_message = "division by zero";
-
-    if (error_message)
-    {
-        fprintf(stderr, "L%u: %s\n", line_number, error_message);
-        free_memory(stack);
-        exit(EXIT_FAILURE);
-    }
-    
-    (*stack)->next->n %= (*stack)->n;
-    *stack = (*stack)->next;
-    free((*stack)->prev);
-    (*stack)->prev = NULL;
+	char *error_message = NULL;
+	
+	if (*stack == NULL || (*stack)->next == NULL)
+		error_message = "can't mod, stack too short";
+	else if ((*stack)->n == 0)
+		error_message = "division by zero";
+	
+	if (error_message)
+	{
+		fprintf(stderr, "L%u: %s\n", line_number, error_message);
+		free_memory(stack);
+	       	exit(EXIT_FAILURE);
+	}
+	
+	(*stack)->next->n %= (*stack)->n;
+	*stack = (*stack)->next;
+	free((*stack)->prev);
+	(*stack)->prev = NULL;
 }
 
+/**
+ * func_pchar - Print the character at the top of the stack.
+ * @stack: A pointer to the stack.
+ * @line_number: The line number in the interpreted file.
+ */
+void func_pchar(stack_t **stack, unsigned int line_number)
+{
+	char *error_message = NULL;
+       
+	if (*stack == NULL)
+		error_message = "Stack is empty; can't print character.";
+	else if ((*stack)->n < 0 || (*stack)->n > 127)
+		error_message = "Value is out of the printable character range.";
+	
+	if (error_message)
+	{
+		fprintf(stderr, "L%u: %s\n", line_number, error_message);
+		free_memory(stack);
+		exit(EXIT_FAILURE);
+	}
+	printf("%c\n", (*stack)->n);
+}
