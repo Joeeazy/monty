@@ -20,7 +20,7 @@ instruction_t arr[] = {
 {"sub", func_sub}, {"div", func_div},
 {"mul", func_mul}, {"mod", func_mod},
 {"pchar", func_pchar}, {"rotr", func_rotr},
-{"rotl", func_rotl},
+{"rotl", func_rotl}, {"pstr", func_pstr},
 };
 while (getline(&line_store, &buffer_size, mem.input_file) != -1)
 {
