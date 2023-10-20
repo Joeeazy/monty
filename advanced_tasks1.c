@@ -29,9 +29,9 @@ void func_div(stack_t **stack, unsigned int src_line)
 char *error_message = NULL;
 
 if (*stack == NULL || (*stack)->next == NULL)
-error_message = "Stack is too short to perform division";
+error_message = "can't div, stack too short";
 else if ((*stack)->n == 0)
-error_message = "Division by zero";
+error_message = "division by zero";
 if (error_message)
 {
 fprintf(stderr, "L%u: %s\n", src_line, error_message);
