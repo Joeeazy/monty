@@ -9,7 +9,7 @@ void func_sub(stack_t **stack, unsigned int src_line)
 {
 if (*stack == NULL || (*stack)->next == NULL)
 {
-fprintf(stderr, "L%u: Error - can't sub, stack too short\n", src_line);
+fprintf(stderr, "L%u: can't sub, stack too short\n", src_line);
 free_memory(stack);
 exit(EXIT_FAILURE);
 }
