@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
 * main - Entry point for processing Monty bytecode files
 * @argc: Number of arguments (expects 2: program name and bytecode file name)

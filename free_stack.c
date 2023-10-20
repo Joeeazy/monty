@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
 * free_memory - free allocated memory
 * @stack: the linked list containing the elements

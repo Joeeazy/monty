@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
 * func_sub - Subtract second top node from the top node.

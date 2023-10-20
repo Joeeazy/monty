@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * func_rotr - function that rotates element to the bottom
