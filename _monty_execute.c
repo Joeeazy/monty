@@ -13,8 +13,8 @@ unsigned int x, line_count = 0;
 stack_t *stackTop = NULL;
 instruction_t arr[] = {
 {"push", func_push},
-{"pall", func_pall},
-{"pint", func_pint},
+{"pall", func_pall}, {"stack", m_stack},
+{"pint", func_pint}, {"queue", m_queue},
 {"pop", func_pop}, {"swap", func_swap},
 {"add", func_add}, {"nop", func_nop},
 {"sub", func_sub}, {"div", func_div},
